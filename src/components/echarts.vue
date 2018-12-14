@@ -11,10 +11,9 @@ require("echarts/map/js/china.js");
 require("echarts/lib/component/tooltip");
 require("echarts/lib/component/title");
 export default {
-  props:['mapStyle'],
+  props: ["mapStyle"],
   data() {
-    return {
-    };
+    return {};
   },
   methods: {
     drawLine() {
@@ -105,8 +104,5 @@ export default {
   border: 80px solid transparent;
   /* border-image: url("../assets/border.png") 30 30 stretch; */
   background: pink;
-}
-.pieStyle{
-
 }
 </style>

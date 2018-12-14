@@ -12,6 +12,7 @@ const mutations = {
     decreate(state){
         state.count--
     }
+    
 }
 const actions = {
     increate({commit}){

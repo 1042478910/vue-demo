@@ -10,7 +10,7 @@
 
 <script>
 // import vuexx from './components/vuex.vue'
-import pagea from "./components/a.vue";
+import pagea from "./components/a.vue"; 
 import pageb from "./components/b.vue";
 import echart from "./components/echarts";
 
