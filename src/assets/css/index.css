@@ -1,0 +1,13 @@
+body{
+    display: flex;
+    font-size: 16px;
+   background-color: #011128;
+}
+.job {
+    width: 600px;
+    padding: 30px;
+    margin: 20px;
+    text-align: left;
+    color: #fff;
+    background-color: #18202d;
+  }

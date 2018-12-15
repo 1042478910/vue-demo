@@ -1,38 +1,53 @@
 <template>
   <div id="app">
     <div class="main">
+      <self/>
       <pagea :pieStyle="pieStyle"/>
-      <pageb :barStyle="barStyle"/>
       <echart :mapStyle="mapStyle"/>
+    </div>
+    <div class="main">
+      <pageb :barStyle="barStyle"/>
+      <intruc/>
+      <skill/>
+      <want/>
     </div>
   </div>
 </template>
 
 <script>
 // import vuexx from './components/vuex.vue'
-import pagea from "./components/a.vue"; 
+import self from "./components/self.vue";
+import pagea from "./components/a.vue";
 import pageb from "./components/b.vue";
-import echart from "./components/echarts";
+import intruc from "./components/intruc.vue";
+import echart from "./components/echarts.vue";
+import skill from "./components/skill.vue";
+import want from "./components/want.vue";
 
 export default {
   name: "app",
   components: {
+    self,
     pagea,
     pageb,
-    echart
+    echart,
+    intruc,
+    skill,
+    want
   },
   data() {
     return {
-      pieStyle: {height: "400px" },
-      barStyle: {height: "400px"},
-      mapStyle: {height: "400px" }
+      pieStyle: { height: "400px" },
+      barStyle: { height: "400px" },
+      mapStyle: { height: "400px" }
     };
   }
 };
 </script>
 
 <style>
-
+@import "./assets/css/reset.css";
+@import "./assets/css/index.css";
 #app {
   margin: auto;
   font-family: "Avenir", Helvetica, Arial, sans-serif;
@@ -42,7 +57,7 @@ export default {
   color: #2c3e50;
   margin-top: 60px;
 }
-.main{
+.main {
   /* display: grid;
   grid-template-columns: 1fr 1fr 1fr; */
   display: flex;
@@ -51,19 +66,18 @@ export default {
   width: 1200px;
   margin: 0 auto;
 }
-.main div{
-  flex:1;
+.main div {
+  flex: 1;
 }
-@media scroll and (min-width:700px){
-        .main{
-          background-color: red;
-          flex-direction: columns;
-        }
-    }
-    @media scroll and (min-width:800px) and (max-width:1000px){
-        .main{
-          background-color: blue;
-        }
-    }
-
+@media scroll and (min-width: 700px) {
+  .main {
+    background-color: red;
+    flex-direction: columns;
+  }
+}
+@media scroll and (min-width: 800px) and (max-width: 1000px) {
+  .main {
+    background-color: blue;
+  }
+}
 </style>

@@ -22,30 +22,23 @@ export default {
 
       //绘制图表
       myCharts.setOption({
-        //     title: { text: '在vue 中使用Echarts'},
-        //     tooltip: {},
-        //     xAxis: {
-        //         data: ["衬衫","羊毛衫", "袜子","雪纺衫", "裤子"]
-        //     },
-        //     yAxis:{},
-        //     series:[{
-        //         name: '销量',
-        //         type: 'bar',
-        //         data: [5,20,15,50,30]
-        //     }]
-
-        // })
-        tooltip: {}, // 鼠标移到图里面的浮动提示框
+        tooltip: {
+          confine: true, //确定tooltip提示框是否限制在父窗体中,默认false.
+          show: true, //是否显示tooltip  true/false
+          trigger: "item",
+          formatter: "{a}"
+        },
         visualMap: {
           //左侧小柱子的配置
           min: 0, // 最小值
-          max: 15000, //最大值
+          max: 50, //最大值
           left: "left", // 定位左边
           top: "bottom", // 定位底部
           text: ["高", "低"], // 上下两个文字
           seriesIndex: [1],
           inRange: {
-            color: ["#e0ffff", "#006edd"] // 深浅颜色
+            // color: ["#e0ffff", "#006edd"] // 深浅颜色
+            color: ["yellow", "orangered"]
           },
           calculable: true // 显示与否
         },
@@ -63,6 +56,8 @@ export default {
           },
           itemStyle: {
             normal: {
+              label: { show: true },
+              areaStyle: { color: "green" }, //设置地图背景色的颜色设置
               borderColor: "rgba(0, 0, 0, 0.2)"
             },
             emphasis: {
@@ -84,7 +79,7 @@ export default {
             name: "启动次数", // 浮动框的标题
             type: "map",
             geoIndex: 0,
-            data: [{ name: "广东", value: 1324 }] // 这里就是数据，即数组可以单独放在外面也可以直接写
+            data: [{ name: "北京", value: 20 }, { name: "山东", value: 40 }] // 这里就是数据，即数组可以单独放在外面也可以直接写
           }
         ]
       });

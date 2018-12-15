@@ -11,10 +11,10 @@ require("echarts/lib/chart/bar");
 require("echarts/lib/component/tooltip");
 require("echarts/lib/component/title");
 export default {
-    props:["barStyle"],
+  props: ["barStyle"],
   data() {
     return {
-      msg: "Welcome to your Vue.js"
+
     };
   },
   methods: {
@@ -23,7 +23,11 @@ export default {
 
       //绘制图表
       myBar.setOption({
-        title: { text: "在vue 中使用Echarts" },
+        title: {
+          text: "在vue 中使用Echarts",
+          left: "center",
+          top: "0"
+        },
         tooltip: {},
         xAxis: {
           data: ["衬衫", "羊毛衫", "袜子", "雪纺衫", "裤子"]
