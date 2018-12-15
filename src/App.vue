@@ -63,7 +63,7 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1200px;
+  width: 1200PX;
   margin: 0 auto;
 }
 .main div {

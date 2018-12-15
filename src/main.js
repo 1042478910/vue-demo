@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
+import './rem'
 // import store from './store.js'
 import store from './store/index.js'
 import echarts from 'echarts';
