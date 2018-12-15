@@ -1,13 +1,27 @@
-body{
+body {
     display: flex;
-    font-size: 16px;
-   background-color: #011128;
+    font-size: 16PX;
+    background-color: #011128;
 }
+
 .job {
-    width: 600px;
-    padding: 30px;
-    margin: 20px;
+    width: 320PX;
+    height: 500PX;
+    padding: 20PX;
+    margin: 0 20PX;
     text-align: left;
     color: #fff;
+    border: 50PX solid transparent;
+    border-image: url("../img/border.png") 30 30 stretch;
     background-color: #18202d;
-  }
+    overflow: hidden;
+}
+
+.myChars {
+    height: 500PX;
+    width: 100%;
+    margin: 0 20PX;
+    border: 50PX solid transparent;
+    border-image: url("../img/border.png") 30 30 stretch;
+    background-color: #18202d;
+}

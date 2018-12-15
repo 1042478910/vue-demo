@@ -1,5 +1,5 @@
 <template>
-  <div id="myCharts" :style="mapStyle"></div>
+  <div id="myCharts"  class="myChars" :style="mapStyle"></div>
 </template>
 
 <script>
@@ -18,7 +18,7 @@ export default {
   methods: {
     drawLine() {
       //初始化echarts实例
-      let myCharts = echarts.init(document.getElementById("myCharts"), "dark");
+      let myCharts = echarts.init(document.getElementById("myCharts"), "#18202d");
 
       //绘制图表
       myCharts.setOption({
@@ -43,6 +43,9 @@ export default {
           calculable: true // 显示与否
         },
         geo: {
+          layoutCenter: ['30%', '30%'],
+          top:'middle',
+          left:'center',
           // 这个是重点配置区
           map: "china", // 表示中国地图
           roam: true,
@@ -71,14 +74,16 @@ export default {
           }
         },
         series: [
+          
           {
             type: "scatter",
             coordinateSystem: "geo" // 对应上方配置
           },
           {
-            name: "启动次数", // 浮动框的标题
+            name: "朋友数", // 浮动框的标题
             type: "map",
             geoIndex: 0,
+             zoom: 1.2,   //这里是关键，一定要放在 series中
             data: [{ name: "北京", value: 20 }, { name: "山东", value: 40 }] // 这里就是数据，即数组可以单独放在外面也可以直接写
           }
         ]
@@ -91,13 +96,5 @@ export default {
 };
 </script>
 
-<style scoped>
-#zn {
-  height: 300px;
-  width: 200px;
-
-  border: 80px solid transparent;
-  /* border-image: url("../assets/border.png") 30 30 stretch; */
-  background: pink;
-}
+<style scoped> 
 </style>

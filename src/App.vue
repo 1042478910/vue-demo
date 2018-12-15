@@ -1,13 +1,14 @@
 <template>
   <div id="app">
+    <banner></banner>
     <div class="main">
       <self/>
       <pagea :pieStyle="pieStyle"/>
       <echart :mapStyle="mapStyle"/>
     </div>
+     <intruc/>
     <div class="main">
       <pageb :barStyle="barStyle"/>
-      <intruc/>
       <skill/>
       <want/>
     </div>
@@ -17,6 +18,7 @@
 <script>
 // import vuexx from './components/vuex.vue'
 import self from "./components/self.vue";
+import banner from "./components/banner.vue";
 import pagea from "./components/a.vue";
 import pageb from "./components/b.vue";
 import intruc from "./components/intruc.vue";
@@ -30,6 +32,7 @@ export default {
     self,
     pagea,
     pageb,
+    banner,
     echart,
     intruc,
     skill,
@@ -37,9 +40,9 @@ export default {
   },
   data() {
     return {
-      pieStyle: { height: "400px" },
-      barStyle: { height: "400px" },
-      mapStyle: { height: "400px" }
+      pieStyle: { height: "100%" },
+      barStyle: { height: "100%" },
+      mapStyle: { height: "100%" }
     };
   }
 };
@@ -55,7 +58,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
+  /* margin-top: 60PX; */
 }
 .main {
   /* display: grid;
@@ -63,21 +66,18 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1200PX;
-  margin: 0 auto;
+  /* width: 1200PX; */
+  height: 500PX;
+  margin: 20PX auto;
+  
 }
 .main div {
   flex: 1;
 }
-@media scroll and (min-width: 700px) {
+
+@media screen and (max-width: 1200px) {
   .main {
-    background-color: red;
-    flex-direction: columns;
-  }
-}
-@media scroll and (min-width: 800px) and (max-width: 1000px) {
-  .main {
-    background-color: blue;
+    width: 1000px;
   }
 }
 </style>

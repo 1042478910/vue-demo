@@ -1,12 +1,12 @@
 <template>
-  <div class="job">
+  <div class="job ">
     <div>
       <h3 class="photo">
-        <img src alt>
+        <img src="../assets/img/6b6a584c510fd9f9e0a53696252dd42a2934a435.jpg" alt>
       </h3>
-      <div v-for="(item, index) in list" :key="index">
+      <div class="selfInfo" v-for="(item, index) in list" :key="index">
         <span class="sub-title">{{item.subTitle}}</span>
-        <span :class="item.class">{{item.skill}}</span>
+        <span class="textIn" :class="item.class">{{item.skill}}</span>
       </div>
     </div>
   </div>
@@ -44,7 +44,6 @@ export default {
         {
           subTitle: "电子邮箱：",
           skill: "xiaoxiaoyun1113@163.com",
-          class: "cf"
         },
         {
           subTitle: "简书：",
@@ -63,13 +62,21 @@ export default {
 </script>
 <style scoped>
 .photo {
-  width: 50px;
-  height: 70px;
+  width: 80PX;
+  height: 80PX;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 .photo img {
   width: 100%;
   height: 100%;
+}
+.selfInfo{
+  font-size: 16PX;
+}
+.textIn{
+ padding-left:5px;
+
 }
 .cf {
   color: #00bfff;

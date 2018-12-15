@@ -1,5 +1,5 @@
 <template>
-  <div class="job">
+  <div class="job w100">
     <common :title="title" :list="list"/>
     <section>
       <div>
@@ -24,7 +24,7 @@ export default {
       title: "工作经历",
       list: [
         {
-          subTitle: "北京***科技有限公司",
+          subTitle: "易到用车",
           skill: "2016/10-2018/12"
         }
       ],
@@ -40,5 +40,10 @@ export default {
 };
 </script>
 <style scoped>
+.w100{
+  width: 100%;
+  text-align: left;
+}
+
 </style>
 

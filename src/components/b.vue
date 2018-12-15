@@ -1,5 +1,5 @@
 <template>
-  <div id="myBar" :style="barStyle">{{msg}}</div>
+  <div id="myBar" class="myChars" :style="barStyle">}</div>
 </template>
 
 <script>
@@ -13,26 +13,36 @@ require("echarts/lib/component/title");
 export default {
   props: ["barStyle"],
   data() {
-    return {
-
-    };
+    return {};
   },
   methods: {
     drawBar() {
-      let myBar = echarts.init(document.getElementById("myBar"), "dark");
+      let myBar = echarts.init(document.getElementById("myBar"), "");
 
       //绘制图表
       myBar.setOption({
+        top: "middle",
+        left: "center",
         title: {
-          text: "在vue 中使用Echarts",
+          text: "在vue中使用Echarts",
+          textStyle: {
+            color: "#fff"
+          },
           left: "center",
           top: "0"
         },
         tooltip: {},
         xAxis: {
+          axisLabel: {
+            color: "#fff"
+          },
           data: ["衬衫", "羊毛衫", "袜子", "雪纺衫", "裤子"]
         },
-        yAxis: {},
+        yAxis: {
+          axisLabel: {
+            color: "#fff"
+          }
+        },
         series: [
           {
             name: "销量",
@@ -50,12 +60,4 @@ export default {
 </script>
 
 <style scoped>
-#zn {
-  height: 300px;
-  width: 200px;
-
-  border: 80px solid transparent;
-  /* border-image: url("../assets/border.png") 30 30 stretch; */
-  background: pink;
-}
 </style>

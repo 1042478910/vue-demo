@@ -19,11 +19,11 @@ export default {
         },
         {
           subTitle: "后端：",
-          skill: "Node、PHP"
+          skill: "XXX、XXX"
         },
         {
           subTitle: "其他：",
-          skill: "MongoDB、MySQL、Sqlserver"
+          skill: "XXX、XXX"
         }
       ]
     };

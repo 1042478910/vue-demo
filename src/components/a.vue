@@ -1,5 +1,5 @@
 <template>
-  <div id="myPie" :style="pieStyle"></div>
+  <div id="myPie" class="myChars" :style="pieStyle"></div>
 </template>
 
 <script>
@@ -19,17 +19,22 @@ export default {
     drawPie() {
       let myPie = echarts.init(document.getElementById("myPie"), "vintage");
       myPie.setOption({
-        backgroundColor: "#2c343c",
+        top: "middle",
+        left: "center",
+        // backgroundColor: "#2c343c",
         title: {
           text: "技能分布图",
           left: "center",
-          top: "0"
+          top: "0",
+          textStyle: {
+            color: "#fff"
+          }
         },
         legend: {
           x: "center",
           y: "bottom",
-          textStyle:{
-            color:'#fff'
+          textStyle: {
+            color: "#fff"
           },
           data: [
             "HTML5",
@@ -45,22 +50,22 @@ export default {
           trigger: "item",
           formatter: "{a} <br/>{b} : {c} ({d}%)"
         },
-          toolbox: {
-                show : false, //是否显示工具栏
-                feature : {
-                    mark : {show: true},
-                    dataView : {show: true, readOnly: false},
-                    magicType : {
-                        show: true,
-                        type: ['pie', 'funnel']
-                    },
-                    restore : {show: true},
-                    saveAsImage : {show: true}
-                }
+        toolbox: {
+          show: false, //是否显示工具栏
+          feature: {
+            mark: { show: true },
+            dataView: { show: true, readOnly: false },
+            magicType: {
+              show: true,
+              type: ["pie", "funnel"]
             },
-            calculable : true,
+            restore: { show: true },
+            saveAsImage: { show: true }
+          }
+        },
+        calculable: true,
         series: {
-          name:'技能分布',
+          name: "技能分布",
           roseType: "angle", //显示成南丁格尔图
           type: "pie",
           radius: "55%",
@@ -83,7 +88,7 @@ export default {
               color: "rgba(255, 255, 255, 0.3)"
             }
           }
-        },
+        }
       });
     }
   },
@@ -94,16 +99,4 @@ export default {
 </script>
 
 <style scoped>
-#zn {
-  height: 300px;
-  width: 200px;
-
-  border: 80px solid transparent;
-  /* border-image: url("../assets/border.png") 30 30 stretch; */
-  background: pink;
-}
-.pieStyle {
-  width: 90%;
-  margin: 0 auto;
-}
 </style>
