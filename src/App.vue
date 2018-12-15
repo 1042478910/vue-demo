@@ -48,22 +48,10 @@ export default {
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 1200px;
+  width: 1200PX;
   margin: 0 auto;
 }
 .main div{
   flex:1;
 }
-@media scroll and (min-width:700px){
-        .main{
-          background-color: red;
-          flex-direction: columns;
-        }
-    }
-    @media scroll and (min-width:800px) and (max-width:1000px){
-        .main{
-          background-color: blue;
-        }
-    }
-
 </style>
